@@ -10,7 +10,7 @@ class PersonalInformation extends StatefulWidget {
 
 class _PersonalInformationState extends State<PersonalInformation> {
   final ScrollController _scrollController = ScrollController();
-  bool _isLoading = false;
+  final bool _isLoading = false;
 
   @override
   void dispose() {
@@ -72,13 +72,18 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 20),
 
               // First Name
-              const Text('First Name', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'First Name',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   labelText: 'Please enter first name',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -86,13 +91,19 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 12),
 
               // Last Name
-              const Text('Last Name', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'Last Name',
+                
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   labelText: 'Please enter last name',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -100,13 +111,18 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 12),
 
               // Father's Name
-              const Text('Father\'s Name', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'Father\'s Name',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   labelText: 'Please enter father\'s name',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -114,13 +130,18 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 12),
 
               // Date of Birth
-              const Text('Date of Birth', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'Date of Birth',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.datetime,
                 decoration: InputDecoration(
                   labelText: 'dd-mm-yyyy',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -128,13 +149,18 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 12),
 
               // Primary Mobile Number
-              const Text('Primary Mobile Number', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'Primary Mobile Number',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   labelText: '+91 9999988888',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -142,13 +168,18 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 12),
 
               // WhatsApp Number
-              const Text('WhatsApp Number', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'WhatsApp Number',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   labelText: '+91 9999988888',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -156,13 +187,18 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 12),
 
               // City
-              const Text('City', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'City',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                   labelText: 'e.g. Bangalore',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -170,14 +206,19 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 12),
 
               // Complete Address
-              const Text('Complete Address', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'Complete Address',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.text,
                 maxLines: 3,
                 decoration: InputDecoration(
                   labelText: 'Search address',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -185,13 +226,18 @@ class _PersonalInformationState extends State<PersonalInformation> {
               const SizedBox(height: 12),
 
               // Language
-              const Text('Language you know', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              const Text(
+                'Language you know',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
               const SizedBox(height: 8),
               TextField(
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                   labelText: 'Select one or multiple',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -209,7 +255,10 @@ class _PersonalInformationState extends State<PersonalInformation> {
                   border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
                 child: Row(
                   children: [
                     const CircleAvatar(
@@ -244,7 +293,9 @@ class _PersonalInformationState extends State<PersonalInformation> {
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
                   labelText: 'Enter referral code',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   filled: true,
                   fillColor: Colors.white,
                 ),
@@ -254,7 +305,12 @@ class _PersonalInformationState extends State<PersonalInformation> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => Document()));},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Document()),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.redAccent,
                     disabledBackgroundColor: Colors.redAccent,

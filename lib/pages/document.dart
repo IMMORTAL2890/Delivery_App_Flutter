@@ -111,7 +111,7 @@ class _DocumentState extends State<Document> {
                  DocumentCard(label: 'Personal Information',isCompleted: true,),
                 SizedBox(height: 40),
 
-                Container(
+                SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationComplete()));},

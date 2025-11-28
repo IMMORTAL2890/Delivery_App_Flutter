@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/pages/personal_information.dart';
-import 'package:food_delivery/pages/registration.dart';
+import 'package:food_delivery/Constant/app_theme.dart';
+import 'package:food_delivery/pages/orders.dart';
+import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OtpVerification extends StatefulWidget {
@@ -14,90 +15,120 @@ class _OtpVerificationState extends State<OtpVerification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-      leading: IconButton(onPressed: () {Navigator.pop(context);}, icon: Icon(Icons.arrow_back,color: Colors.black,)),
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.blue.shade100,
+              Colors.white
+            ],
+          ),
+         ),
+        padding: const EdgeInsets.all(30.0),
+        child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
              const Text(
-                'Enter OTP to verify',
+                'Verification Code',
                 style: TextStyle(
                   fontSize: 30.0,
-                  letterSpacing: 1.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(height: 30.0),
               const Text(
-                'A 6 digit OTP has been sent to your phone',
-                style: TextStyle(fontSize: 18.0, height: 0.5),
-              ),
-              Row(
-                children: [
-                  const Text('number ', style: TextStyle(fontSize: 18.0)),
-                   Text(
-                    '+91 9999888888',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Registration()),
-                      );
-                    },
-                    child: const Text(
-                      "Change",
-                      style: TextStyle(fontSize: 18, color: Colors.red),
-                    ),
-                  ),
-                ],
+                'We have  send the code verification to',
+                style: TextStyle(fontSize: 16.0, height: 0.5,color: Colors.grey),
               ),
               SizedBox(height: 20.0),
-              const Text('Enter OTP text', style: TextStyle(fontSize: 18)),
-              SizedBox(height: 10.0),
-
+              RichText(
+                text:TextSpan(
+                  text: 'your number ',
+                  style: TextStyle(fontSize: 16.0, height: 0.5, color: Colors.grey),
+                  children: [
+                    TextSpan(
+                      text: '+01 5594969850',
+                      style: TextStyle(fontSize: 18.0, height: 0.5, color: Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+             
+              SizedBox(height: 30.0),
+              
               PinCodeTextField(
                 appContext: context,
-                length: 6,
+                length: 4,
+                cursorColor: Colors.black,
+                // backgroundColor: Colors.white,
                 keyboardType: TextInputType.number,
                 animationType: AnimationType.fade,
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
-                  borderRadius: BorderRadius.circular(8.0),
-                  fieldHeight: 40,
-                  fieldWidth: 40,
-                  activeFillColor: Colors.white,
-                  selectedFillColor: Colors.white,
-                  inactiveFillColor: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                  fieldHeight: 59,
+                  fieldWidth: 65,
+                  inactiveColor: Colors.grey.shade200,
+                  selectedColor: Colors.black,
+                  activeColor: Colors.grey.shade200,
+                  selectedFillColor: Colors.grey.shade200,
+                  inactiveFillColor: Colors.grey.shade200,
+                  activeFillColor: Colors.grey.shade200
                 ),
-              ),
+                //backgroundColor: Colors.blue[60],
+                animationDuration: Duration(milliseconds: 300),
+                enableActiveFill: true,
 
+              ),
+                
               SizedBox(height: 20.0),
+              Text('02:39',
+              style: TextStyle(fontWeight: FontWeight.bold,
+              fontSize: 16),),
+              SizedBox(height:30),
               SizedBox(
-                height: 50.0,
+                height: 60.0,
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>PersonalInformation()));
+                    Get.to(Orders());
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: AppTheme.color,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0),
                     ),
                   ),
                   child: const Text(
-                    'Verify OTP',
+                    'Submit',
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ),
               ),
+              SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Didn\'t receive the code?',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey
+                ,),),
+                TextButton(
+                  onPressed: () {
+                    
+                  },
+                  child: Text('Resend',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black
+                  ),),
+                ),
+              ],)
             ],
           ),
         ),

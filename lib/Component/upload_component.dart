@@ -74,7 +74,7 @@ class UploadComponent extends StatelessWidget {
               SizedBox(height: 40.0,),
             ],
             SizedBox(height: 40.0,),
-            Container(
+            SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                   onPressed: (){

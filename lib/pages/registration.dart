@@ -31,9 +31,18 @@ class _RegistrationState extends State<Registration> {
                 children: [ 
                   Center(
                     child: Image.asset(
-                    'assets/images/partner.png',
-                    height: 300,
-                  ),),
+                      'assets/images/partner.png',
+                      height: 300,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          height: 300,
+                          width: 200,
+                          color: Colors.grey[300],
+                          child: const Icon(Icons.image, size: 100),
+                        );
+                      },
+                    ),
+                  ),
                   const SizedBox(height: 30),
 
                   const Text(
@@ -82,13 +91,11 @@ class _RegistrationState extends State<Registration> {
                   Row(
                     children: [
                       Checkbox(
-                        value: true,
+                        value: isChecked,
                         onChanged: (value) {
-                          if(isChecked == true){
-                            isChecked = false;
-                          }else{
-                            isChecked = true;
-                          }
+                          setState(() {
+                            isChecked = value ?? false;
+                          });
                         },
                         activeColor: Colors.redAccent,
                       ),
